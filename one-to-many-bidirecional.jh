@@ -1,0 +1,28 @@
+entity  Beneficiario{
+	cdAssociado Long,
+    ativo Boolean,
+    nome String,
+    sexo Sexo,
+    altura Double,
+    peso Double
+    dataNascimento LocalDate,
+    nomeMae String,
+    rg String,
+    cpf String      
+}
+
+
+entity Email{
+	email String,
+	tipoEmail Ordem,
+}
+
+enum Ordem{
+	PRINCIPAL, SECUNDARIO
+}
+
+relationship OneToMany  {
+	Beneficiario {emails} to Email{beneficiario}
+}
+
+

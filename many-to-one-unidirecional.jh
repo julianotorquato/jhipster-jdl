@@ -1,0 +1,14 @@
+entity TipoQuestionario {
+	cdTipoQuestionario Long,
+    descricao String
+}
+
+entity  Questionario{
+	cdQuestionario Long,    
+    cdEmpresa Long,
+    ativo Boolean
+}
+
+relationship ManyToOne  {
+    Questionario{tipoQuestionario} to TipoQuestionario
+}
